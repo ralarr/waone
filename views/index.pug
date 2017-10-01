@@ -1,0 +1,8 @@
+extends layout
+
+block content
+	h1 #{title}
+	ul.list-group
+		each comment, i in comments
+			li.list-group-item
+				a(href="/comments/"+comment._id)= comment.title

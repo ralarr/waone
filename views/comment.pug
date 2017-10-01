@@ -1,0 +1,11 @@
+extends layout
+
+block content
+	h1= comment.title
+	h5 Written by: #{author}
+	p= comment.body
+	hr
+	if user
+		if user.id == comment.author
+			a.btn.btn-default(href='/comments/edit/'+comment._id) Edit
+			a.btn.btn-danger.delete-comment(href='#', data-id=comment._id) Delete
